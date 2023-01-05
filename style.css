@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+/*
+font-family: 'Inter', sans-serif;
+font-family: 'Lexend Deca', sans-serif;
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #090b1a;
+  text-align: center;
+}
+p {
+  font-family: "Inter", sans-serif;
+  font-size: 0.65rem;
+  color: #ffffffbf;
+}
+
+main {
+  background-color: #1b1938;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 260px;
+  color: hsl(0, 0%, 100%);
+
+  display: grid;
+  grid-template-columns: 1em auto 1em;
+  grid-template-areas:
+    "image image image"
+    "..... heading ..... "
+    "..... para ....."
+    "..... number .....";
+  row-gap: 7px;
+}
+
+.image {
+  grid-area: image;
+  width: 100%;
+  height: 175px;
+  background-image: linear-gradient(
+      rgba(170, 92, 219, 0.6),
+      rgba(170, 92, 219, 0.6)
+    ),
+    url("images/image-header-mobile.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: contrast(250%);
+}
+.heading {
+  font-family: "Lexend Deca", sans-serif;
+  grid-area: heading;
+  font-size: 1.125rem;
+}
+.heading > span {
+  color: rgb(170, 92, 219);
+}
+.content {
+  grid-area: para;
+  line-height: 1.35;
+}
+.numbers {
+  grid-area: number;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.numbers p {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  color: #ffffff99;
+  text-transform: uppercase;
+}
+.numbers span {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Lexend Deca", sans-serif;
+  color: #ffffff;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  font-size: 0.5em;
+  text-align: center;
+}
+.attribution a {
+  color: #aa5cdb;
+}
+
+/* Media queries */
+@media (min-width: 750px) {
+  main {
+    text-align: left;
+    width: 600px;
+    grid-template-rows: 50px auto auto auto 50px;
+    grid-template-columns: 2em 300px 1em 300px;
+    grid-template-areas:
+      ". .       . image"
+      ". heading . image"
+      ". para    . image"
+      ". number  . image"
+      ". .       . image";
+  }
+  .image {
+    background-image: linear-gradient(
+        rgba(170, 92, 219, 0.6),
+        rgba(170, 92, 219, 0.6)
+      ),
+      url("images/image-header-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    gap: 10px;
+  }
+  .content {
+    margin: 10px auto;
+  }
+  .numbers {
+    grid-area: number;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    margin-bottom: -20px;
+  }
+  .numbers p {
+    padding: 0;
+    padding-right: 30px;
+  }
+}
